@@ -1,0 +1,8 @@
+<%= link_to "All", articles_path %>
+
+<h3> <%= @article.title %></h3>
+<p><%= simple_format(@article.description) %></p>
+
+<%= link_to "Edit", edit_article_path(@article) %> |
+<%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are You Sure?"} %>
+

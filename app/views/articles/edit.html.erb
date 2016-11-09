@@ -1,5 +1,6 @@
-<h1>Edit Article</h1>
+<h1 align="center">Edit Article</h1>
 
 <%= render 'form'%>
-
-<%= link_to "Cancel", article_path(@article) %>
+<div class="col-xs-4 col-xs-offset-5">
+  [ <%= link_to "Cancel Edit and return to Article", article_path(@article)%> ]
+</div>

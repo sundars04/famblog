@@ -134,3 +134,24 @@ footer {
 		font-size: .85rem;
 	}
 }
+.date {
+      margin-top: .25rem;
+      font-size: 1.5rem;
+      color: #B2BAC2;
+}
+.article-actions {
+	text-align: center;
+	
+	.date {
+		text-align: left;
+
+	}
+	.article-btn {
+		color: #397CAC;
+	  border: 1px solid #397CAC;
+	  padding: .5em 1em;
+	  border-radius: 0.2em;
+	  text-decoration: none;
+	  margin-right: 2%;
+	}
+} 

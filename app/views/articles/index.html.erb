@@ -1,17 +1,17 @@
-<div class="body">
-	<h2>All Articles</h2>
-	<%= link_to "Create Article", new_article_path %>
-	<table>
-		<tr>
-			<% @articles.each do |article| %>
-			<tr>
-				<td><h3><%= article.title %><h3></td>
-				<td><p><%= article.description.truncate(50) %></p></td>
-				<td><%= link_to "Show", article_path(article) %></td>
-				<td><%= link_to "Edit", edit_article_path(article) %></td>
-				<td><%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are You Sure?"} %></td>
-			</tr>
-			<% end -%>
-		</tr>
-	</table>
-</div>
+<h2 align="center">All Articles</h2>
+
+<% @articles.each do |article| %>
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<div class="well well-lg">
+				<div class="article-title">
+					<%= link_to article.title, article_path(article) %>
+				</div>
+				<p class="date"><%= "Published #{article.created_at.to_time.strftime('%B %e at %l:%M %p')}" %> by <%= "" %></p>
+				<div class="article-body">
+					<%= article.description.truncate(100) %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end -%>

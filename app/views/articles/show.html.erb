@@ -1,7 +1,17 @@
 <h2 align="center"> <%= @article.title %></h2>
 <div class="well col-xs-10 col-xs-offset-1">
-  <hr>
-  <p class="date">Published by: <%= @article.user.username %> on <%= @article.created_at.to_time.strftime('%B %e at %l:%M %p') %></p>  
+  <ul class="listing">
+      <div class="row">
+        <div align="center">
+          <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+          <li class="article-title">
+            <%= link_to @article.user.username, user_path(@article.user)%>
+          </li>
+          <li><small><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></small></li>
+        </div>
+      </div>
+    </ul>
+  <p class="date">Published on <%= @article.created_at.to_time.strftime('%B %e at %l:%M %p') %></p>  
   <%= simple_format(@article.description) %>
   <hr>
   <div class="article-actions">    

@@ -7,7 +7,9 @@
 				<div class="article-title">
 					<%= link_to article.title, article_path(article) %>
 				</div>
-				<p class="date"><%= "Published #{article.created_at.to_time.strftime('%B %e at %l:%M %p')}" %> by <%= "" %></p>
+				<div class="article-meta">
+					<p class="date">Published by: <%= article.user.username %> on <%= "#{article.created_at.to_time.strftime('%B %e at %l:%M %p')}" %> </p>
+				</div>
 				<div class="article-body">
 					<%= article.description.truncate(100) %>
 				</div>

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, :only => [:edit, :update]
+  before_action :require_same_user, :only => [:edit, :update]
+  
   def index
     @users = User.reorder("created_at DESC").page(params[:page]).per_page(10)
     @articles = Article.reorder("created_at DESC").page(params[:page]).per_page(10)
@@ -43,5 +46,12 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:username, :email, :password)
+    end
+
+    def require_same_user
+      if current_user != @user
+        flash[:danger] = "You can only edit your account"
+        redirect_to users_path
+      end
     end
 end

@@ -14,10 +14,12 @@
   <p class="date">Published on <%= @article.created_at.to_time.strftime('%B %e at %l:%M %p') %></p>  
   <%= simple_format(@article.description) %>
   <hr>
-  <div class="article-actions">    
-    <%= link_to "Edit", edit_article_path(@article), 
-      class: "article-btn"%>    
-    <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are You Sure?"}, class: "article-btn"%>
-  </div>  
+  <% if logged_in? && current_user == @article.user %>
+    <div class="article-actions">    
+      <%= link_to "Edit", edit_article_path(@article), 
+        class: "article-btn"%>    
+      <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are You Sure?"}, class: "article-btn"%>
+    </div>
+  <% end -%>
 </div>
 

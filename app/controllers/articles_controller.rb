@@ -2,7 +2,9 @@ class ArticlesController < ApplicationController
   before_action :find_article, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @articles = Article.all.order("created_at DESC")
+    
+    @articles = Article.reorder("created_at DESC").page(params[:page]).per_page(10)
+    
   end
 
   def show    

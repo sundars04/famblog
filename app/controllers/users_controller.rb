@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
   def index
-    @users = User.all
+    @users = User.reorder("created_at DESC").page(params[:page]).per_page(10)
+    @articles = Article.reorder("created_at DESC").page(params[:page]).per_page(10)
   end
 
   def show
+    @user_articles = @user.articles.paginate(page: params[:page], per_page: 10)
   end
 
   def new

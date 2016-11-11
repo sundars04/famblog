@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :articles
+  has_many :articles, dependent: :destroy
   before_save { self.email = email.downcase }
 
   scope :sorted, -> {order("created_at DESC")}

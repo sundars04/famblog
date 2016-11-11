@@ -14,7 +14,7 @@
   <p class="date">Published on <%= @article.created_at.to_time.strftime('%B %e at %l:%M %p') %></p>  
   <%= simple_format(@article.description) %>
   <hr>
-  <% if logged_in? && current_user == @article.user %>
+  <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
     <div class="article-actions">    
       <%= link_to "Edit", edit_article_path(@article), 
         class: "article-btn"%>    

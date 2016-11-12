@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_articles = @user.articles.paginate(page: params[:page], per_page: 10)
+    @user_articles = @user.articles.reorder("created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 
   def new

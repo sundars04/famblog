@@ -11,6 +11,9 @@
         </div>
       </div>
     </ul>
+  <div class="image">
+    <center><%= image_tag @article.image.url(:medium) if @article.image? %></center>
+  </div>
   <p class="date">Published on <%= @article.created_at.to_time.strftime('%B %e at %l:%M %p') %></p>  
   <%= simple_format(@article.description) %>
   <hr>

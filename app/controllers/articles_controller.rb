@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :require_same_user, :only => [:edit, :update, :destroy]
   
   def index    
-    @articles = Article.reorder("created_at DESC").page(params[:page]).per_page(10)    
+    @articles = Article.reorder("created_at DESC").page(params[:page]).per_page(10)
   end
 
   def show

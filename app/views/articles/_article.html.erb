@@ -11,6 +11,10 @@
         <div class="article-body">
           <%= article.description.truncate(100) %>
         </div>
+        <br>
+        <% if article.categories.any? %>
+          <p>Categories: <%= render article.categories %></p>
+        <% end -%>
       </div>
     </div>
   </div>

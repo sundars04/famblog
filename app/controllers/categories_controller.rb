@@ -1,12 +1,11 @@
 class CategoriesController < ApplicationController
-
+  before_action :find_catgory, only: [:show, :edit, :update]
   before_action :require_admin, except: [:index, :show]
   def index
     @categories = Category.reorder("created_at DESC").page(params[:page]).per_page(5)
   end
 
-  def show
-    @category = Category.find(params[:id])
+  def show    
     @category_articles = @category.articles.reorder("updated_at DESC").paginate(page: params[:page], per_page: 5)
   end
 
@@ -24,7 +23,23 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def edit    
+  end
+
+  def update
+    if @category.update_attributes(category_params)
+      flash[:success] = "Category name was successfully updated"
+      redirect_to category_path(@category)
+    else
+      render 'edit'
+    end
+  end
+
   private
+
+    def find_catgory
+      @category = Category.find(params[:id])   
+    end
 
     def category_params
       params.require(:category).permit(:name)

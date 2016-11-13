@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.order("created_at DESC")
+    @categories = Category.reorder("created_at DESC").page(params[:page]).per_page(5)
   end
 
   def show

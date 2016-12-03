@@ -3,7 +3,7 @@
   <ul class="listing">
       <div class="row">
         <div align="center">
-          <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+          <li><%= image_tag @article.user.avatar.url, size:150, class:"img-circle" %></li>
           <li class="article-title">
             <%= link_to @article.user.username, user_path(@article.user)%>
           </li>

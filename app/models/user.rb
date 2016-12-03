@@ -12,5 +12,9 @@ class User < ApplicationRecord
               length: {minimum:5, maximum: 105},
               uniqueness: {case_sensitive: false},
               format: {with: EMAIL_REGEX}
-  has_secure_password              
+  has_secure_password
+
+  has_attached_file :avatar, styles: { medium: '152x152#' }
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+  validates_attachment_size :avatar, :less_than => 2.megabytes
 end

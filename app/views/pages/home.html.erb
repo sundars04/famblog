@@ -1,21 +1,18 @@
-<div>
-<div id="banner">
-	
-		<div class="banner_content">
-			<h1>Blog</h1>
-			<p>A Place where Friends and Family can connect and share</p>
-			<%= link_to "Sign Up", signup_path, :class => "button button"%>
+<section class="module parallax parallax-1">
+  <div class="container">
+    <h1>Blog</h1>
+    <p>Share Pictures, Current Happenings, Updates, Anything you find interesting and want to share with the rest</p>
 
-		</div>
-	
-</div>
+  </div>
+</section>
 
-<div id="testimonial">
-	<div class="wrapper">
-		<p class="quote"> Share Pictures, Current Happenings, Updates, Anything you find interesting and want to share with the rest</p>
-		<p class="name"> - TestUser</p>
-	</div>
-</div>
+<section class="module content">
+  <div class="container">
+    <h2>A blog for friends and Family</h2>
+    <%= link_to "Sign Up", signup_path, :class => "button button"%>    
+  </div>
+</section>
+
   
 <div id="callouts">
 	<div class="callout_inner">
@@ -48,3 +45,22 @@
 	<p style:"color: black;">&copy; Ruby on Rails 2016</p>
 </footer>
 </div>
+
+<script type="text/javascript">
+(function(){
+
+  var parallax = document.querySelectorAll(".parallax"),
+      speed = 0.5;
+
+  window.onscroll = function(){
+    [].slice.call(parallax).forEach(function(el,i){
+
+      var windowYOffset = window.pageYOffset, elementYOffset = el.offsetTop, elBackgrounPos = "50% " + ((windowYOffset - elementYOffset) * speed) + "px";
+
+      el.style.backgroundPosition = elBackgrounPos;
+
+    });
+  };
+
+})();
+</script>

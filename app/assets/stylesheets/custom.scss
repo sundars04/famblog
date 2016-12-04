@@ -80,7 +80,7 @@ button, .button {
 }
 
 #callouts {
-	background-image: url(image_path("background2.jpg"));
+
 	
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -101,11 +101,11 @@ button, .button {
 		}
 		h2 {
 			@include bold_font;
-			color: white;
+			color: $dark_gray;
 			margin-bottom: 0;
 		}
 		p {
-			color: ivory;
+			color: #777;
 		}
 	}
 }
@@ -187,3 +187,4 @@ footer {
 	  text-decoration: none;
 	  margin-right: 2%;
 	}
+

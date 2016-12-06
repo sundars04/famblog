@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
     @articles = Article.reorder("updated_at DESC").page(params[:page]).per_page(5)
   end
 
-  def show
+  def show    
+    @new_comment = Comment.build_from(@article, current_user.id, "")
   end
 
   def new

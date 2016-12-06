@@ -21,13 +21,12 @@
     <p>Categories: <%= render @article.categories%></p>
   <% end -%>
   <div class="article-actions">    
-    <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
-      
+    <% if logged_in? && (current_user == @article.user || current_user.admin?) %>      
         <%= link_to "Edit", edit_article_path(@article), 
           class: "article-btn"%>    
-        <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are You Sure?"}, class: "article-btn"%>
-      
+        <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are You Sure?"}, class: "article-btn"%>      
     <% end -%>
   </div>
+<%= render partial: "comments/template", locals: {commentable: @article, new_comment: @comment} %>  
 </div>
 

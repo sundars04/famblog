@@ -16,6 +16,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 5.1'
 gem 'aws-sdk', '~> 2'
+gem 'acts_as_commentable_with_threading', '~> 2.0', '>= 2.0.1'
+gem 'jquery-turbolinks', '~> 2.1'
 
 group :development, :test do
   gem 'sqlite3'

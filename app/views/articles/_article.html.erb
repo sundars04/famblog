@@ -10,7 +10,9 @@
         </div>
         <div class="article-body">
           <%= article.description.truncate(100) %>
+          <p class="comment_count"><%= pluralize(article.comment_threads.count, "Comment") %></p>
         </div>
+        
         <br>
         <% if article.categories.any? %>
           <p>Categories: <%= render article.categories %></p>

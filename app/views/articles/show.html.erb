@@ -27,6 +27,8 @@
         <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are You Sure?"}, class: "article-btn"%>      
     <% end -%>
   </div>
-<%= render partial: "comments/template", locals: {commentable: @article, new_comment: @comment} %>  
+  <% if logged_in? %>
+    <%= render partial: "comments/template", locals: {commentable: @article, new_comment: @comment} %>
+  <% end -%>
 </div>
 

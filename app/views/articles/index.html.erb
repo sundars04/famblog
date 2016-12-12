@@ -1,8 +1,13 @@
 <h2 align="center">All Articles</h2>
-<div align="center">
-  <%= will_paginate %>
+<div class="pull-right">
+  <%= search_form_for @q, html: {class: "form-inline"} do |f| %>    
+    <%= f.search_field :title_or_description_cont, placeholder: "Search...", class: "form-control" %>
+    <button type="submit" class="btn btn-default">Submit</button>    
+  <% end -%>
 </div>
+<br>
+
 <%= render 'article', obj: @articles %>
 <div align="center">
-  <%= will_paginate %>
+  <%= will_paginate previous_label: "Previous", next_label: "Next" %>
 </div>

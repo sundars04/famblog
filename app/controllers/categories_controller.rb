@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :find_catgory, only: [:show, :edit, :update]
   before_action :require_admin, except: [:index, :show]
   def index
-    @categories = Category.reorder("created_at DESC").page(params[:page]).per_page(5)
+    @categories = Category.sorted.page(params[:page]).per_page(5)
   end
 
   def show    

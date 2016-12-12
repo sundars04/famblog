@@ -3,12 +3,15 @@ class ArticlesController < ApplicationController
   before_action :require_user, :except => [:index, :show]
   before_action :require_same_user, :only => [:edit, :update, :destroy]
   
-  def index    
-    @articles = Article.reorder("updated_at DESC").page(params[:page]).per_page(5)
+  def index
+    @q = Article.search(params[:q])
+    @articles = @q.result.sorted.page(params[:page]).per_page(5)
   end
 
-  def show    
-    @new_comment = Comment.build_from(@article, current_user.id, "")
+  def show
+    if logged_in?
+      @new_comment = Comment.build_from(@article, current_user.id, "")
+    end
   end
 
   def new

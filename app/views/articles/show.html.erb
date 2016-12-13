@@ -15,7 +15,7 @@
     <center><%= image_tag @article.image.url(:medium) if @article.image? %></center>
   </div>
   <p class="date">Published on <%= @article.created_at.to_time.strftime('%B %e at %l:%M %p') %></p>  
-  <%= simple_format(@article.description) %>
+  <%= markdown(@article.description) %>
   <hr>
   <%if @article.categories.any? %>
     <p>Categories: <%= render @article.categories%></p>

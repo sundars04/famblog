@@ -12,7 +12,7 @@
  *
  *= require normalize.scss
  *= require_tree .
- *= require_self
+ * require_self
  */
 
 @import "normalize";
@@ -21,3 +21,4 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "comments";
+@import "pygments";

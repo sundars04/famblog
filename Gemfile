@@ -19,6 +19,8 @@ gem 'aws-sdk', '~> 2'
 gem 'acts_as_commentable_with_threading', '~> 2.0', '>= 2.0.1'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'ransack'
+gem 'pygments.rb', '~> 1.0'
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 
 group :development, :test do
   gem 'sqlite3'

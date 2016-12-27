@@ -17,4 +17,10 @@ class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: '152x152#' }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates_attachment_size :avatar, :less_than => 2.megabytes
+
+  has_many :likes
+
+  def likes?(article)
+    article.likes.where(user_id: id).any?
+  end
 end

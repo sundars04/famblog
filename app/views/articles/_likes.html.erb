@@ -1,0 +1,14 @@
+<% if logged_in? && current_user.likes?(article) %>
+  <%= link_to article_like_path(article), method: :delete, remote: true do %>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  <% end -%>
+<% else %>
+  <%= link_to article_like_path(article), method: :post, remote: true do %>
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
+  <% end -%>
+<% end -%>
+
+<%= article.likes.count %>
+<% article.likes.last(5).each do |like| %>
+  <%= image_tag like.user.avatar.url, width: 20, class:"img-circle" %>
+<% end -%>

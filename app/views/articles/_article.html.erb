@@ -6,11 +6,17 @@
           <%= link_to article.title, article_path(article) %>
         </div>
         <div class="article-meta">          
-          <p class="date">Published by: <%= article.user.username if article.user %> on <%= "#{article.created_at.to_time.strftime('%B %e at %l:%M %p')}" %> </p>
+          
+          <p class="date">Published by: <%= image_tag article.user.avatar.url, size:30, class:"img-circle" if article.user %> on <%= "#{article.created_at.to_time.strftime('%B %e at %l:%M %p')}" %> </p>
+          
         </div>
         <div class="article-body">
           <%= article.description.truncate(100) %>
-          <p class="comment_count"><%= pluralize(article.comment_threads.count, "Comment") %></p>
+          <% if article.image? %>
+            <i class="fa fa-picture-o" aria-hidden="true"></i>
+          <% end -%>
+          <p class="comment_count"><i class="fa fa-comments" aria-hidden="true"></i> <%= article.comment_threads.count %></p><br>
+          <br><p class="comment_count"><%= render partial: "articles/likes", locals: { article: article } %></p>
         </div>
         
         <br>

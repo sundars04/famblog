@@ -1,66 +1,120 @@
-<section class="module parallax parallax-1">
-  <div class="container">
-    <h1>Blog</h1>
-    <p>Share Pictures, Current Happenings, Updates, Anything you find interesting and want to share with the rest</p>
+<body>  
 
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Blog</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Share Pictures, Current Happenings, Updates, Anything you find interesting and want to share with the rest</h5>
+        </div>
+        <div class="row center">          
+          <%= link_to "Sign Up", signup_path, class:"btn-large waves-effect waves-light teal lighten-1"%>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="/assets/background3.jpg" alt="Unsplashed background img 1"></div>
   </div>
-</section>
 
-<section class="module content">
+
   <div class="container">
-    <h2>A blog for friends and Family</h2>
-    <%= link_to "Sign Up", signup_path, :class => "button button"%>    
-  </div>
-</section>
+    <div class="section">
 
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="fa fa-pencil-square-o fa-2x"></i></h2>
+            <h5 class="center">Articles</h5>
+
+            <p class="light">Paste articles you find intersting or Write your own article.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="fa fa-users fa-2x"></i></h2>
+            <h5 class="center">Focusing on Family and Friends</h5>
+
+            <p class="light">Share Pictures with family and friends.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="fa fa-heart fa-2x"></i></h2>
+            <h5 class="center">Like's</h5>
+
+            <p class="light">"Like" Pictures and articles posted, Motivate and ask for more!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Let others know what is happening. Updates you want to share. Come accross an intersting article or heard something you want to share post it as an article.</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/assets/background4.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>For Real?</h4>
+          <p class="left-align light">A Stage to let others know what is happening. Updates you want to share. Heard something you want to share? Post it as an article.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive Forum based on Ruby on Rails</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/assets/background5.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        
+          <h5 class="white-text">&copy; Ruby on Rails 2016</h5>          
+        
+        
+        
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="https://github.com/sundars04">Sundar</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
   
-<div id="callouts">
-	<div class="callout_inner">
-		<div class="wrapper">
-			<div class="callout">
-				<i class="fa fa-pencil-square-o fa-2x"></i>				
-        <h2>Articles</h2>
-        <p>Paste articles you find intersting or Write your own article</p>
-			</div>
-			<div class="callout">
-				<i class="fa fa-picture-o fa-2x"></i>				
-        <h2>Pictures</h2>
-        <p>Share Pictures with family and friends</p>
-			</div>
-			<div class="callout">
-				<i class="fa fa-bolt fa-2x"></i>
-        <h2>Updates</h2>
-        <p>Share Pictures with family and friends</p>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="bottom_cta">
-	<div class="wrapper">
-		<h2>For Real?</h2>
-		<p>Let others know what is happening. Updates you want to share. Come accross an intersting article or heard something you want to share post it as an article.</p>		
-	</div>
-</div>
-<footer style:"color: #2B2E2E;">
-	<p style:"color: black;">&copy; Ruby on Rails 2016</p>
-</footer>
-</div>
+  <script src="assets/materialize.min.js"></script>
+  <script src="assets/init.js"></script>
 
-<script type="text/javascript">
-(function(){
+</body>
 
-  var parallax = document.querySelectorAll(".parallax"),
-      speed = 0.5;
-
-  window.onscroll = function(){
-    [].slice.call(parallax).forEach(function(el,i){
-
-      var windowYOffset = window.pageYOffset, elementYOffset = el.offsetTop, elBackgrounPos = "50% " + ((windowYOffset - elementYOffset) * speed) + "px";
-
-      el.style.backgroundPosition = elBackgrounPos;
-
-    });
-  };
-
-})();
-</script>

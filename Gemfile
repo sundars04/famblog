@@ -22,6 +22,7 @@ gem 'jquery-turbolinks', '~> 2.1'
 gem 'ransack'
 gem 'pygments.rb', '~> 1.0'
 gem 'redcarpet', '~> 3.3', '>= 3.3.4'
+gem 'materialize-sass'
 
 
 group :development, :test do

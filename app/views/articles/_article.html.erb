@@ -16,7 +16,7 @@
             <i class="fa fa-picture-o" aria-hidden="true"></i>
           <% end -%>
           <p class="comment_count"><i class="fa fa-comments" aria-hidden="true"></i> <%= article.comment_threads.count %></p><br>
-          <br><p class="comment_count"><%= render partial: "articles/likes", locals: { article: article } %></p>
+          <br><p id="article_<%= article.id %>_likes" style="float: right"><%= render partial: "articles/likes", locals: { article: article } %></p>
         </div>
         
         <br>

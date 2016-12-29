@@ -3,7 +3,7 @@ $light_gray: #C0C1C1;
 $green: #33CD99;
 
 @mixin bold_font {
-	font-family: "Brandon Grotesque","Helvetica Neue", Helvetica, sans-serif;
+	font-family: 'Lato','Roboto', "Brandon Grotesque", "Helvetica Neue", Helvetica, sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
 }

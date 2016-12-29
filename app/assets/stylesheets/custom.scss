@@ -29,6 +29,15 @@ button, .button {
 		text-decoration: none;
 	}
 }
+button {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
 #logo {
 	text-transform: uppercase;
 	letter-spacing: -1px;
@@ -161,6 +170,7 @@ footer {
 .article-title {	
 	font-size: 1.5em;	
 	text-decoration-style: none !important;
+	text-decoration-line: none !important;
 }
 .listing {
 	list-style: none;

@@ -6,16 +6,16 @@
           <%= link_to article.title, article_path(article) %>
         </div>
         <div class="article-meta">          
-          
-          <p class="date">Published by: <%= image_tag article.user.avatar.url, size:30, class:"img-circle" if article.user %> on <%= "#{article.created_at.to_time.strftime('%B %e at %l:%M %p')}" %> </p>
-          
+          <p class="date">Published by: <%= image_tag article.user.avatar.url, size:30, class:"img-circle" if article.user %> on <%= "#{article.created_at.to_time.strftime('%B %e at %l:%M %p')}" %> </p>          
         </div>
         <div class="article-body">
-          <%= article.description.truncate(100) %>
-          <% if article.image? %>
-            <i class="fa fa-picture-o" aria-hidden="true"></i>
+          <div class="truncate">
+            <%= article.description.truncate(100) %>
+          </div>
+          <% if article.image? %>            
+            <h2 class="left teal-text"><i class="fa fa-picture-o fa-1x"></i></h2>
           <% end -%>
-          <p class="comment_count"><i class="fa fa-comments" aria-hidden="true"></i> <%= article.comment_threads.count %></p><br>
+          <p class="comment_count" style="float: right"><i class="fa fa-comments" aria-hidden="true"></i> <%= article.comment_threads.count %></p><br>
           <br><p id="article_<%= article.id %>_likes" style="float: right"><%= render partial: "articles/likes", locals: { article: article } %></p>
         </div>
         

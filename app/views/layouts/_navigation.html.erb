@@ -46,7 +46,7 @@
         <% if logged_in? %>
           <%= yield :right_nav %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag current_user.avatar.url, size:30, class:"img-circle" %> <%= current_user.username %><span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag current_user.avatar.url, size:20, class:"img-circle" %> <%= current_user.username %><span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", user_path(current_user) %></li>              
               <li><%= link_to "Settings", edit_user_path(current_user) %></li>

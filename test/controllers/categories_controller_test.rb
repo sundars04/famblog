@@ -13,11 +13,11 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new" do
     get new_category_url
-    assert_response :success
+    assert_redirected_to categories_path
   end
 
   test "should get show" do
-    get(new_category_url, category_path(@category))
+    get category_path(@category)
     assert_response :success
   end
   

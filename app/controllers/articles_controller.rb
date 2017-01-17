@@ -11,6 +11,8 @@ class ArticlesController < ApplicationController
   def show
     if logged_in?
       @new_comment = Comment.build_from(@article, current_user.id, "")
+    else
+      @all_comments = @article.comment_threads
     end
   end
 

@@ -4,7 +4,7 @@
   </h4>
 </div>
 
-<%= render partial: "comments/form", locals: {new_comment: new_comment} %>
+<%= render partial: "comments/form", locals: {new_comment: new_comment} if logged_in? %>
 
 <div class="comments-container">  
   
